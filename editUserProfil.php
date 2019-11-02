@@ -32,10 +32,10 @@ session_start();
                                 <h4 style="color:yellow;"> <?php echo $_SESSION['username']."'s Profile"; ?> </h4>
                                 <br>
                                 <h4>Username: <?php echo $_SESSION['username'];   ?></h4><br>
-                                <h4 >Firstname and lastname: <?php echo $_SESSION['name'];?></h4><br>
-                                <h4>Email:  <?php echo $_SESSION['email'];   ?></h4><br><br>
+                                <h4 >Firstname and lastname: <?php echo $_SESSION['name'];?></h4><br><br>
+                                <h4>Email:  <?php echo $_SESSION['email'];   ?></h4><br>
                                 <button id="delete" class="btn btn-success" name="delete" type="button" 
-                                onclick="location.href='delete.php'" value="Delete">Delete</button>                       
+                                onclick="location.href='delete.php'" value="Delete">Delete User</button>                       
                         </div> 
 
 
@@ -45,14 +45,20 @@ session_start();
                             <div class="form-group contact h5 mt-3 mb-4">
                                 <h4>Change data</h4>
                                     <input class="form-control" type="text" id="username" name="username" disabled
-                                    style="background-color:grey"; 
+                                    style="background-color:grey;" 
                                     value="<?php echo $_SESSION['username'];?>" placeholder = "<?php echo $_SESSION['username'];?>">                               
                                     <br>
                                     <input class="form-control" type="text" id="fnName" name="fnName">
-                                    <br>
+                                    <div class="text-right"><input id="updateName" class="btn btn-success" 
+                                    name="updateName" type="submit" value="Update"></div>
+                            </div>
+                        </form>    
+
+                        <form id = "formEdit2" action="editToDatabase2.php" method="post"> 
+                            <div class="form-group contact h5 mt-3 mb-4">
                                     <input class="form-control" type="email" id="mailE" name="mailE">
-                                    <br>
-                                    <input id="update" class="btn btn-success" name="update" type="submit" value="Update">
+                                    <div class="text-right"><input id="updateEmail" class="btn btn-success" 
+                                    name="updateEmail" type="submit" value="Update"></div>
                                 <br>
                             </div>    
                         </form>    
@@ -61,7 +67,7 @@ session_start();
                             
             </div>
                 
-                <p style="text-align:center; padding-top:2%;"> * To change your name and email, enter changed inputs in the adjacent fields and press "Update".</p>
+                <p style="text-align:center; "> * To change your name and email, enter changed inputs in the adjacent fields and press "Update".</p>
                 <p style="text-align:center;">To delete your account press "Delete"</p>
 
         </div>
