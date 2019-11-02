@@ -21,84 +21,51 @@ session_start();
         include_once 'partials/navbar.php';
     ?>
     <div id="editProfile" class="container-fluid">
-  
 		<div>
 
-			<div class="wrapper mt-3">
-                <h2 style="text-align:center; font-family: 'My Custom Font'; ">Edit your profile information</h4>
-                <h4 style="text-align:center; font-family: 'My Custom Font';">To change any of your data, enter changed inputs 
-                in the adjacent fields and press "Update". <h2>
-                <h4 style="text-align:center; font-family: 'My Custom Font';margin-bottom:5%;">To delete your account press "Delete"</h4>
-			    <form id = "formEdit" action="editToDatabase.php" method="post">
-				
-				
-			        <div class="form-group contact h5 mt-3 mb-4">
+			<div class="wrapper mt-3 h5">
+                <h2 style="text-align:center; font-family: 'My Custom Font';">Edit your profile information</h4>
+                <h4 style="text-align:center; font-family: 'My Custom Font';margin-bottom:5%;"></h4>
                      
-                        <div class="row">
-                            <div class="offset-1 col-md-5">
-                                <h4> <?php echo $_SESSION['username']."'s Profile"; ?> </h4>
-                            </div>
+                    <div class="row">
+                        <div class="offset-md-1 col-md-5 col-12">                       
+                                <h4 style="color:yellow;"> <?php echo $_SESSION['username']."'s Profile"; ?> </h4>
+                                <br>
+                                <h4>Username: <?php echo $_SESSION['username'];   ?></h4><br>
+                                <h4 >Firstname and lastname: <?php echo $_SESSION['name'];?></h4><br>
+                                <h4>Email:  <?php echo $_SESSION['email'];   ?></h4><br><br>
+                                <button id="delete" class="btn btn-success" name="delete" type="button" 
+                                onclick="location.href='delete.php'" value="Delete">Delete</button>                       
+                        </div> 
 
-                            <div class="col-md-5">
+
+                    <div class="col-md-5">
+                           
+                        <form id = "formEdit" action="editToDatabase.php" method="post"> 
+                            <div class="form-group contact h5 mt-3 mb-4">
                                 <h4>Change data</h4>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="offset-1 col-md-5">
-                                <p>Firstname and lastname: <?php echo $_SESSION['name'];   ?></p>
-                            </div>
-
-                            <div class="col-md-5">
-                                <input class="form-control" type="text" id="fnName" name="fnName">
-                            </div>
-                        </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="offset-1 col-md-5">
-                                <p>Username:  <?php echo $_SESSION['username'];   ?></p>
-                            </div>
-
-                            <div class="col-md-5">
-                                <input class="form-control" type=text id="uName" name="uName">
-                            </div>
-                        </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="offset-1 col-md-5">
-                                <p>Email:  <?php echo $_SESSION['email'];   ?></p>
-                            </div>
-
-                            <div class="col-md-5">
-                                <input class="form-control" type="email" id="mailE" name="mailE">
-                            </div>
-                        </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="offset-1 col-md-5">		
-                                <button id="signIn" class="btn btn-success" name="delete" type="button" 
-                                onclick="location.href='delete.php'" value="Delete">Delete</button>
-                            </div>
-
-                            <div class="col-md-5">		
-						        <input id="signIn" class="btn btn-success" name="update" type="submit" value="Update">
-                             </div>
-                        </div>
-                                   
+                                    <input class="form-control" type="text" id="username" name="username" disabled
+                                    style="background-color:grey"; 
+                                    value="<?php echo $_SESSION['username'];?>" placeholder = "<?php echo $_SESSION['username'];?>">                               
+                                    <br>
+                                    <input class="form-control" type="text" id="fnName" name="fnName">
+                                    <br>
+                                    <input class="form-control" type="email" id="mailE" name="mailE">
+                                    <br>
+                                    <input id="update" class="btn btn-success" name="update" type="submit" value="Update">
+                                <br>
+                            </div>    
+                        </form>    
                     </div>
-                </form>
+                </div>
+                            
             </div>
-        </div>
-        <footer class="mt-5">
-   
-        <?php
-            include_once "partials/pageFooter.php";
-        ?>
+                
+                <p style="text-align:center; padding-top:2%;"> * To change your name and email, enter changed inputs in the adjacent fields and press "Update".</p>
+                <p style="text-align:center;">To delete your account press "Delete"</p>
 
-        </footer>
+        </div>
     </div>
+      
 </body>
 </html>

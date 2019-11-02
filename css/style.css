@@ -133,10 +133,11 @@ body
   padding-bottom: 6%;
 } 
 #editProfile{
+  padding-top: 3%;
   background: url(../photos/edit/picEdit.jpg) no-repeat;
   background-size: cover;
   margin:0%;
-  color:rgb(37, 252, 9);
+  color:white;
 }
 
 #register-login{

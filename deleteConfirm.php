@@ -39,6 +39,7 @@ session_start();
     
 
                     if ($con->query($sql) === TRUE) {
+                        session_destroy();
                         echo "<h2 style='text-align:center'>You deleted your account succesfully. </h2>";   
                         echo "<h2 style='text-align:center;'> Go to our 
                             <a style='color:black; text-decoration: underline; text-decoration-color: orange;'
@@ -49,8 +50,6 @@ session_start();
                 }
             }
             $con->close();
-
-            session_destroy();
 
 
 

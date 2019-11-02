@@ -46,7 +46,7 @@ session_start();
 					You can see photos and find all information that you need in order to make your choice. </p>
 
 				<h2 id="hurryUp" class="h3"> Hurry up, and start using BelgradeRestos app instantly! </h2>
-				<p class="h4"><a id="button1" href="#">Make a reservation!</a></p>
+				<p class="h4"><a id="button1" href="#section2">Create your account and make a reservation!</a></p>
 			</div>
 
 		</div>
