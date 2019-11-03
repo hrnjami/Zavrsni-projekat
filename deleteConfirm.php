@@ -10,13 +10,15 @@ session_start();
     ?>
     <title> Delete User </title>
 </head>
-<body>
+<body style="background-color: rgb(61, 190, 61) !important;" onload="myFunction()" style="margin:0;">
+
     <?php 
 
         include_once "partials/navbar.php";
     ?>
+    <div id="loader"></div>
 <!--jumbotron section -->
-    <section class="sectionProfil1" class="jumbotron jumbotron-fluid">
+    <section style="display:none;" id="myDiv" class="animate-bottom sectionProfil1 jumbotron jumbotron-fluid">
 
 <!--User's account will be definitely deleted only if they confirm their selection.  -->
 
@@ -51,22 +53,22 @@ session_start();
             }
             $con->close();
 
-
-
         ?>
-
-
 
     </section>
-
-    <footer class="mt-5">
-   
-        <?php
-            include_once "partials/pageFooter.php";
-        ?>
-
-    </footer>
 </body>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 </html>
 
       

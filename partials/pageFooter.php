@@ -20,7 +20,7 @@
     </div>
     <div>
         <p>Contact us:</p>
-        <span class="mb-5">Milica Hrnjez
+        <span class="mb-5">Milica Hrnjaz
         <a href="https://www.linkedin.com/feed/"><img id="in" src=".\photos\footer\in.png"></a>
         </span><br>
         <span class="mb-5">Dragana Bogicevic
